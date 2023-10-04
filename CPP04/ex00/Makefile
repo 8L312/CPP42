@@ -8,7 +8,7 @@ NAME		= Test
 
 FLAGS		= -Wall -Wextra -Werror -std=c++98 -pedantic
 
-CC			= g++-11
+CC			= g++
 
 .cpp.o:
 			${CC} ${FLAGS} -c $< -o ${<:.cpp=.o}
