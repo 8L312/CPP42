@@ -4,6 +4,7 @@
 #include "Character.hpp"
 
 int main(){
+	std::cout << std::endl << std::endl;
 	{
 	std::cout << "TEST DU SUJET :" << std::endl;
 	IMateriaSource* src = new MateriaSource();
@@ -37,11 +38,13 @@ int main(){
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	tmp = src->createMateria("cure");
+	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	tmp = src->createMateria("curedent");
+	tmp = src->createMateria("ice");	//plus de place
+	me->equip(tmp);
+	tmp = src->createMateria("curedent");	//pas une materia reconnue
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
@@ -52,7 +55,8 @@ int main(){
 	me->use(-2, *bob);
 	me->use(-1, *bob);
 
-	std::cout << "aut tour de Bob" << std::endl << std::endl;
+	std::cout << "######################################" << std::endl << std::endl;
+	std::cout << "*** au tour de Bob ***" << std::endl << std::endl;
 
 	AMateria* tmp2;
 	tmp2 = src->createMateria("ice");
